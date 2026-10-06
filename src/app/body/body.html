@@ -1,0 +1,20 @@
+<main>
+  <h2>Profil Utilisateur</h2>
+
+  <p>Simple count: {{ count }}</p>
+  <button type="button" (click)="incrementSimple()">Increment simple</button>
+
+  <p>Signal count: {{ counts() }}</p>
+  <button type="button" (click)="incrementWithSignal()">Increment signal</button>
+
+  <section>
+    <h3>Liste des amis</h3>
+    <ul>
+      @for (ami of amis; track ami) {
+        <li>{{ ami }}</li>
+      }
+    </ul>
+  </section>
+
+  <app-conference-list></app-conference-list>
+</main>
