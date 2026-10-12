@@ -1,2 +1,8 @@
-<header> <h1>WELCOME</h1> 
-    <nav> <a href="#">Accueil</a> <br> <a href="#">Profil</a> <br><a href="#">Amis</a> <br><a href="#">Notifications</a> </nav> </header>
+<header>
+  <h1>PROSIT 1</h1>
+  <nav aria-label="Navigation principale">
+    <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
+    <a routerLink="/conferences" routerLinkActive="active">Conférences</a>
+    <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+</header>

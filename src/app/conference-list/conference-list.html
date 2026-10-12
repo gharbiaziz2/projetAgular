@@ -2,7 +2,7 @@
   <h3>Liste des conférences</h3>
   <p>Count : {{ count }}</p>
   <ul>
-    @for (conference of conferences; track conference.name) {
+    @for (conference of conferences; track conference.id) {
       <app-conference-details
         [conference]="conference"
         (increment)="increment()">

@@ -20,10 +20,11 @@ describe('Body', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render conference list data', async () => {
+  it('should render the friends list', async () => {
     fixture.detectChanges();
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.textContent).toContain('Conference 1');
+    expect(compiled.textContent).toContain('Ahmed');
+    expect(compiled.textContent).toContain('Mariem');
   });
 });

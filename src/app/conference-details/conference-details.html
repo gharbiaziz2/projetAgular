@@ -1,6 +1,23 @@
-<li>
-  <h3>{{ conference().name }}</h3>
-  <p>Date : {{ conference().date }}</p>
-  <p>Location : {{ conference().location }}</p>
-  <button type="button" (click)="incrementCount()">+</button>
-</li>
+@if (selectedConference(); as conference) {
+  @if (this.conference()) {
+    <li>
+      <h3>{{ conference.name }}</h3>
+      <p>Date : {{ conference.date }}</p>
+      <p>Lieu : {{ conference.location }}</p>
+      <button type="button" (click)="incrementCount()" aria-label="Compter cette conférence">+</button>
+      <a [routerLink]="['/conferences', conference.id]">Voir les détails</a>
+    </li>
+  } @else {
+    <article>
+      <h2>{{ conference.name }}</h2>
+      <p>Date : {{ conference.date }}</p>
+      <p>Lieu : {{ conference.location }}</p>
+      <a routerLink="/conferences">Retour à la liste</a>
+    </article>
+  }
+} @else {
+  <section>
+    <h2>Conférence introuvable</h2>
+    <a routerLink="/conferences">Retour à la liste</a>
+  </section>
+}

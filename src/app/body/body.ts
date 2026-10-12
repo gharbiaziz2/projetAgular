@@ -1,9 +1,8 @@
 import { Component, signal } from '@angular/core';
-import { ConferenceList } from '../conference-list/conference-list';
 
 @Component({
   selector: 'app-body',
-  imports: [ConferenceList],
+  imports: [],
   templateUrl: './body.html',
   styleUrl: './body.css'
 })
