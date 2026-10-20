@@ -1,0 +1,35 @@
+<form [formGroup]="UserForm" (ngSubmit)="onSubmit()">
+    <h2>Create your account</h2>
+    <p class="form-description">Enter your details below to get started.</p>
+
+    <div class="form-field">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" aria-required="true" autocomplete="name" />
+        @if (UserForm.controls.name.touched && UserForm.controls.name.hasError('required')) {
+            <p class="error-message">Name is required.</p>
+        }
+    </div>
+
+    <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" aria-required="true" autocomplete="email" />
+        @if (UserForm.controls.email.touched && UserForm.controls.email.hasError('required')) {
+            <p class="error-message">Email is required.</p>
+        } @else if (UserForm.controls.email.touched && UserForm.controls.email.hasError('email')) {
+            <p class="error-message">Enter a valid email address.</p>
+        }
+    </div>
+
+    <div class="form-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" aria-required="true" autocomplete="new-password" />
+        @if (UserForm.controls.password.touched && UserForm.controls.password.hasError('required')) {
+            <p class="error-message">Password is required.</p>
+        } @else if (UserForm.controls.password.touched && UserForm.controls.password.hasError('minlength')) {
+            <p class="error-message">Password must be at least 6 characters.</p>
+        }
+    </div>
+
+    <button type="submit">Create account</button>
+    
+</form>

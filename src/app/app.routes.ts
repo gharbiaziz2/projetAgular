@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home';
 import { ContactComponent } from './contact/contact';
 import { ConferenceList } from './conference-list/conference-list';
 import { ConferenceDetails } from './conference-details/conference-details';
+import { UserForm } from './user-form/user-form';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -10,5 +11,6 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent, data: { title: 'Page de contact' } },
   { path: 'conferences', component: ConferenceList },
   { path: 'conferences/:id', component: ConferenceDetails },
-  { path: '**', redirectTo: 'home' }
+  { path: 'add', component: UserForm },
+  { path: '**', redirectTo: 'home' },
 ];
